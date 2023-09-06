@@ -64,6 +64,7 @@
     <Compile Include="Assets\Script\Pmove\TopDownControl.cs" />
     <Compile Include="Assets\Script\GameManager.cs" />
     <Compile Include="Assets\Script\start.cs" />
+    <Compile Include="Assets\Script\Time.cs" />
     <Compile Include="Assets\Script\Pmove\TopDownMove.cs" />
   </ItemGroup>
   <ItemGroup>

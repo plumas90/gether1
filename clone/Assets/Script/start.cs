@@ -11,17 +11,26 @@ using static Unity.Burst.Intrinsics.X86;
 
 public class start : MonoBehaviour
 {
+    public static start I;
     [SerializeField] public Sprite sprite;
     public GameObject pickup;
     public GameObject so1;
     public GameObject so2;
     public GameObject so3;
 
+    public int chaType;
+
+    public string namesave;
+
     public TMP_InputField inputField;
     public GameObject nameSet;
-    string playername;
 
-
+    public void Awake()
+    {
+        I = this;
+        chaType = 1;
+        DontDestroyOnLoad(gameObject);
+    }
     // Start is called before the first frame update
     public void Startbtn()
     {
@@ -36,7 +45,8 @@ public class start : MonoBehaviour
     {
         //gameManager.I.playerName = inputField.GetComponent<TextMeshPro>().text;
         //gameManager.I.nameText.text = inputField.text;
-        gameManager.I.test = inputField.text;
+        //gameManager.I.test = inputField.text;
+        namesave=inputField.text;
         //gameManager.I.playerName = inputField.text;
         nameSet.SetActive(false);
         
@@ -54,13 +64,13 @@ public class start : MonoBehaviour
     {
         //스프라이트=이미지
         so1.GetComponent<UnityEngine.UI.Image>().sprite = so2.GetComponent<UnityEngine.UI.Image>().sprite;
-        gameManager.I.chatype = 1;
+        chaType = 1;
         pickup.SetActive(false);
     }
     public void Pick2()
     {
         so1.GetComponent<UnityEngine.UI.Image>().sprite = so3.GetComponent<UnityEngine.UI.Image>().sprite;
-        gameManager.I.chatype = 2;
+        chaType = 2;
         pickup.SetActive(false);
     }
 }
